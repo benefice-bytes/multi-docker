@@ -13,15 +13,15 @@ script:
 after_success:
   - docker build -t octaviusjr/multi-client ./client
   - docker build -t octaviusjr/multi-nginx ./nginx
-  - docker build -t octaivusjr/multi-server ./server
+  - docker build -t octaviusjr/multi-server ./server
   - docker build -t octaviusjr/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
   - docker push octaviusjr/multi-client
   - docker push octaviusjr/multi-nginx
-  - docker push octaivusjr/multi-server
+  - docker push octaviusjr/multi-server
   - docker push octaviusjr/multi-worker
-  
+
 
 
